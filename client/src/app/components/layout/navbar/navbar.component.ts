@@ -4,8 +4,7 @@ import { MenuConfigurationService } from 'src/app/services/menu-configuration.se
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.less'],
-  // encapsulation: ViewEncapsulation.None
+  styleUrls: ['./navbar.component.less']
 })
 export class NavbarComponent implements OnInit {
   public menuItems: any[];

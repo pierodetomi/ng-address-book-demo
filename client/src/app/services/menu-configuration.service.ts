@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class MenuConfigurationService {
   private _mockMenuItems: any[] = [
     { label: 'Home', url: '/' },
-    { label: 'Contacts List', url: '/contacts' },
+    { label: 'Contacts', url: '/contacts' },
     { label: 'About Us', url: '/about' },
     { label: 'Help', url: '/help' }
   ];

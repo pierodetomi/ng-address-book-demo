@@ -1,1 +1,13 @@
-<p>contact-list works!</p>
+<button [routerLink]="'/contacts/add'">New</button>
+<!-- <button (click)="addNew()">New</button> -->
+
+<ng-container *ngIf="isLoading">
+  Loading ...
+</ng-container>
+
+<ng-container *ngIf="!isLoading">
+  <div *ngFor="let contact of contacts">
+    <strong>{{contact.name}}</strong> [{{contact.email}}]: {{contact.phone}}
+    <button (click)="delete(contact)">Delete</button>
+  </div>
+</ng-container>

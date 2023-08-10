@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from services.address_book import AddressBookService
+import time
 
 app = Flask(__name__)
+CORS(app)
 service = AddressBookService()
 
 # Add a new contact
@@ -16,6 +19,7 @@ def add_contact():
 @app.route('/contacts', methods=['GET'])
 def get_contacts():
   contact_list = service.get_all()
+  # time.sleep(2)
   return jsonify(contact_list)
 
 # Get the details of a specific contact by id
