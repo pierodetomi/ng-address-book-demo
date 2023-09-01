@@ -41,4 +41,8 @@ export class AddressBookService {
   public addAsync(contact: IContact): Observable<IContact> {
     return this._http.post<IContact>(AddressBookService._endpoint, contact);
   }
+
+  public updateAsync(contact: IContact): Observable<IContact> {
+    return this._http.put<IContact>(AddressBookService._endpoint, contact);
+  }
 }

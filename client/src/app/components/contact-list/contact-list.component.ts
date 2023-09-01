@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IContact } from 'src/app/models/contact';
 import { AddressBookService } from 'src/app/services/address-book.service';
 
@@ -12,9 +13,16 @@ export class ContactListComponent implements OnInit {
 
   public isLoading = true;
 
-  constructor(/*private _router: Router, */private _addressBookService: AddressBookService) { }
+  public highlightedContactId?: number;
+
+  constructor(/*private _router: Router, */private _activatedRoute: ActivatedRoute, private _addressBookService: AddressBookService) { }
 
   public ngOnInit(): void {
+    this._activatedRoute.params
+      .subscribe(params => {
+        this.highlightedContactId = +params['highlightedContactId'];
+      });
+
     this._loadData();
   }
 

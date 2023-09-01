@@ -6,8 +6,9 @@
 </ng-container>
 
 <ng-container *ngIf="!isLoading">
-  <div *ngFor="let contact of contacts">
+  <div *ngFor="let contact of contacts" [class.is-highlighted]="contact.id === highlightedContactId">
     <strong>{{contact.name}}</strong> [{{contact.email}}]: {{contact.phone}}
+    <button [routerLink]="'/contacts/edit/' + contact.id">Edit</button>
     <button (click)="delete(contact)">Delete</button>
   </div>
 </ng-container>

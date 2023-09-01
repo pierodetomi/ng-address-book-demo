@@ -1,0 +1,26 @@
+<div class="add-contact-form"
+     [formGroup]="form">
+  <input type="text"
+         placeholder="Name"
+         formControlName="name"
+         [class.invalid]="form.controls['name'].invalid" />
+  <input type="email"
+         placeholder="Email"
+         formControlName="email"
+         [class.invalid]="form.get('email').invalid" />
+  <input type="tel"
+         placeholder="Phone number"
+         formControlName="phone"
+         [class.invalid]="form.get('phone').invalid" />
+
+  <!-- <button (click)="save()">
+    <span *ngIf="id">Update </span>
+    <span *ngIf="!id">Add </span>
+    Contact
+  </button> -->
+
+  <button (click)="save()"
+          [disabled]="form.invalid">
+    {{id ? 'Update ' : 'Add '}} Contact
+  </button>
+</div>
