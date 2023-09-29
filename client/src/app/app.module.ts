@@ -10,6 +10,8 @@ import { EditContactPageComponent } from './components/edit-contact-page/edit-co
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { ViewChildSampleComponent } from './components/view-child-sample/view-child-sample.component';
+import { KeypressAlertDirective } from './directives/keypress-alert.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
     NavbarComponent,
     FooterComponent,
     ContactListComponent,
-    EditContactPageComponent
+    EditContactPageComponent,
+    ViewChildSampleComponent,
+    KeypressAlertDirective
   ],
   imports: [
     BrowserModule,
